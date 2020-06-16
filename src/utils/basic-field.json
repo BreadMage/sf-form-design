@@ -1,0 +1,50 @@
+[
+  {
+    "label": "单行文本",
+    "type": "input"
+  },
+  {
+    "label": "多行文本",
+    "type": "textarea"
+  },
+  {
+    "label": "计数器",
+    "type": "input-number"
+  },
+  {
+    "label": "单选框组",
+    "type": "radio-group"
+  },
+  {
+    "label": "多选框组",
+    "type": "checkbox-group"
+  },
+  {
+    "label": "时间选择器",
+    "type": "time-picker"
+  },
+  {
+    "label": "日期选择器",
+    "type": "date-picker"
+  },
+  {
+    "label": "评分",
+    "type": "rate"
+  },
+  {
+    "label": "开关",
+    "type": "switch"
+  },
+  {
+    "label": "滑块",
+    "type": "slider"
+  },
+  {
+    "label": "文字",
+    "type": "text"
+  },
+  {
+    "label": "HTML",
+    "type": "html"
+  }
+]
