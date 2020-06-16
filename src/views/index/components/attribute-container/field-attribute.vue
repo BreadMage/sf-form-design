@@ -13,7 +13,10 @@
         :type="activeField.type"
         :activeField="activeField"
       />
-      <input-number-design :activeField="activeField" />
+      <input-number-design
+        :activeField="activeField"
+        v-if="activeField.type === 'input-number'"
+      />
     </section>
   </div>
 </template>
