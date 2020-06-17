@@ -17,19 +17,28 @@
         :activeField="activeField"
         v-if="activeField.type === 'input-number'"
       />
+      <radio-group-design
+        :activeField="activeField"
+        v-if="activeField.type === 'radio-group'"
+      />
     </section>
   </div>
 </template>
 <script>
 import { Empty, Divider, Input } from "ant-design-vue";
-import { InputDesign, InputNumberDesign } from "@/components/field-design";
+import {
+  InputDesign,
+  InputNumberDesign,
+  RadioGroupDesign
+} from "@/components/field-design";
 export default {
   components: {
     [Empty.name]: Empty,
     [Divider.name]: Divider,
     [Input.name]: Input,
     "input-design": InputDesign,
-    "input-number-design": InputNumberDesign
+    "input-number-design": InputNumberDesign,
+    "radio-group-design": RadioGroupDesign
   },
   props: {
     activeField: {

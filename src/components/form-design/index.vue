@@ -26,7 +26,19 @@
         v-model="item.defaultValue"
       />
       <a-textarea v-if="item.type === 'textarea'" />
-      <a-input-number v-if="item.type === 'input-number'"></a-input-number>
+      <a-input-number v-if="item.type === 'input-number'" />
+      <a-radio-group
+        v-if="item.type === 'radio-group'"
+        v-model="item.defaultValue"
+      >
+        <a-radio
+          :class="item.layout !== 'inline' && 'radio-group-block'"
+          v-for="(option, key) in item.options"
+          :key="key"
+          :value="option.value"
+          >{{ item.showLabel ? option.label : option.value }}</a-radio
+        >
+      </a-radio-group>
       <a-rate v-if="item.type === 'rate'" />
       <a-switch v-if="item.type === 'switch'" />
       <a-slider v-if="item.type === 'slider'" />
@@ -61,7 +73,8 @@ import {
   Slider,
   DatePicker,
   TimePicker,
-  Icon
+  Icon,
+  Radio
 } from "ant-design-vue";
 export default {
   components: {
@@ -75,7 +88,9 @@ export default {
     [DatePicker.name]: DatePicker,
     [TimePicker.name]: TimePicker,
     [Icon.name]: Icon,
-    [Input.Password.name]: Input.Password
+    [Input.Password.name]: Input.Password,
+    [Radio.Group.name]: Radio.Group,
+    [Radio.name]: Radio
   },
   props: {
     item: {
@@ -144,5 +159,9 @@ export default {
 }
 .active {
   border-color: #1890ff;
+}
+.radio-group-block {
+  display: block;
+  line-height: 30px;
 }
 </style>

@@ -1,19 +1,34 @@
 [
   {
     "label": "单行文本",
-    "type": "input"
+    "type": "input",
+    "acctionAttributeControl": ["hidden", "disabled", "password"],
+    "formRulesControl": ["required", "dataType", "pattern"]
   },
   {
     "label": "多行文本",
-    "type": "textarea"
+    "type": "textarea",
+    "acctionAttributeControl": ["hidden", "disabled"],
+    "formRulesControl": ["required", "pattern"]
   },
   {
     "label": "计数器",
-    "type": "input-number"
+    "type": "input-number",
+    "acctionAttributeControl": ["hidden", "disabled"],
+    "formRulesControl": ["required"]
   },
   {
     "label": "单选框组",
-    "type": "radio-group"
+    "type": "radio-group",
+    "options": [
+      { "label": "Option1", "value": "option1" },
+      { "label": "Option2", "value": "option2" },
+      { "label": "Option3", "value": "option3" }
+    ],
+    "prop": {
+      "label": "label",
+      "value": "value"
+    }
   },
   {
     "label": "多选框组",

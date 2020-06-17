@@ -10,9 +10,15 @@
     <h4>自定义Class</h4>
     <a-input v-model="activeField.customClass" />
     <a-divider />
-    <action-attribute-config :active-field="activeField" />
+    <action-attribute-config
+      :active-field="activeField"
+      :control="activeField.acctionAttributeControl"
+    />
     <a-divider />
-    <form-rules-config :active-field="activeField" />
+    <form-rules-config
+      :active-field="activeField"
+      :control="activeField.formRulesControl"
+    />
   </div>
 </template>
 <script>
