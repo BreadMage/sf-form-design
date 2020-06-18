@@ -17,9 +17,16 @@
         :activeField="activeField"
         v-if="activeField.type === 'input-number'"
       />
-      <radio-group-design
+      <radio-checkbox-group-design
         :activeField="activeField"
-        v-if="activeField.type === 'radio-group'"
+        v-if="
+          activeField.type === 'radio-group' ||
+            activeField.type === 'checkbox-group'
+        "
+      />
+      <select-design
+        v-if="activeField.type === 'select'"
+        :activeField="activeField"
       />
     </section>
   </div>
@@ -29,7 +36,8 @@ import { Empty, Divider, Input } from "ant-design-vue";
 import {
   InputDesign,
   InputNumberDesign,
-  RadioGroupDesign
+  RadioCheckboxGroupDesign,
+  SelectDesign
 } from "@/components/field-design";
 export default {
   components: {
@@ -38,7 +46,8 @@ export default {
     [Input.name]: Input,
     "input-design": InputDesign,
     "input-number-design": InputNumberDesign,
-    "radio-group-design": RadioGroupDesign
+    "radio-checkbox-group-design": RadioCheckboxGroupDesign,
+    "select-design": SelectDesign
   },
   props: {
     activeField: {

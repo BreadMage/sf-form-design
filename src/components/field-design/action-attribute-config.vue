@@ -14,6 +14,11 @@
       v-if="control.includes('password')"
       >密码模式</a-checkbox
     >
+    <a-checkbox
+      v-model="activeField.allowClear"
+      v-if="control.includes('allowClear')"
+      >显示清除按钮</a-checkbox
+    >
   </div>
 </template>
 <script>

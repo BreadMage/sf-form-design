@@ -28,11 +28,38 @@
     "prop": {
       "label": "label",
       "value": "value"
-    }
+    },
+    "mode": "default"
   },
   {
     "label": "多选框组",
-    "type": "checkbox-group"
+    "type": "checkbox-group",
+    "options": [
+      { "label": "Option1", "value": "option1" },
+      { "label": "Option2", "value": "option2" },
+      { "label": "Option3", "value": "option3" }
+    ],
+    "prop": {
+      "label": "label",
+      "value": "value"
+    },
+    "mode": "multiple",
+    "defaultValue": []
+  },
+  {
+    "label": "下拉选择框",
+    "type": "select",
+    "options": [
+      { "label": "Option1", "value": "option1" },
+      { "label": "Option2", "value": "option2" },
+      { "label": "Option3", "value": "option3" }
+    ],
+    "prop": {
+      "label": "label",
+      "value": "value"
+    },
+    "mode": "default",
+    "defaultValue": []
   },
   {
     "label": "时间选择器",

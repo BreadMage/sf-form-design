@@ -1,5 +1,11 @@
 import InputDesign from "./input-design.vue";
 import InputNumberDesign from "./input-number-design.vue";
-import RadioGroupDesign from "./radio-group-design.vue";
+import RadioCheckboxGroupDesign from "./radio-checkbox-group-design.vue";
+import SelectDesign from "./select-design.vue";
 
-export { InputDesign, InputNumberDesign, RadioGroupDesign };
+export {
+  InputDesign,
+  InputNumberDesign,
+  RadioCheckboxGroupDesign,
+  SelectDesign
+};

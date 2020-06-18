@@ -27,7 +27,7 @@
         class="options-config-main flex"
       >
         <a-radio
-          v-if="control === 'single'"
+          v-if="activeField.mode === 'default'"
           :checked="activeField.defaultValue === option.value"
           @change="
             () => {
@@ -35,6 +35,16 @@
             }
           "
         ></a-radio>
+        <a-checkbox
+          style="margin-right: 8px"
+          v-if="activeField.mode === 'multiple'"
+          :checked="activeField.defaultValue.includes(option.value)"
+          @change="
+            () => {
+              multipleDefaultValueChange(option.value);
+            }
+          "
+        ></a-checkbox>
         <a-input v-model="option.value" class="options-config-value"></a-input>
         <a-input
           v-model="option.label"
@@ -49,7 +59,7 @@
         >添加选项</a-button
       >
     </draggable>
-    <div>
+    <div v-if="activeField.remote">
       <a-radio-group
         default-value="variable"
         v-model="activeField.remoteType"
@@ -87,7 +97,8 @@ import {
   Radio,
   Switch,
   Icon,
-  Button
+  Button,
+  Checkbox
 } from "ant-design-vue";
 export default {
   components: {
@@ -100,6 +111,7 @@ export default {
     [Switch.name]: Switch,
     [Icon.name]: Icon,
     [Button.name]: Button,
+    [Checkbox.name]: Checkbox,
     draggable
   },
   data() {
@@ -113,10 +125,6 @@ export default {
     activeField: {
       type: Object,
       default: () => {}
-    },
-    control: {
-      type: String,
-      default: "single"
     }
   },
   computed: {
@@ -138,6 +146,14 @@ export default {
     },
     singleDefaultValueChange(value) {
       this.$set(this.activeField, "defaultValue", value);
+    },
+    multipleDefaultValueChange(value) {
+      if (this.activeField.defaultValue.includes(value)) {
+        const index = this.activeField.defaultValue.findIndex(l => l === value);
+        this.activeField.defaultValue.splice(index, 1);
+      } else {
+        this.activeField.defaultValue.push(value);
+      }
     },
     remoteTypeChange() {
       if (this.activeField.remoteType === "variable") {

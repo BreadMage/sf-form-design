@@ -32,13 +32,39 @@
         v-model="item.defaultValue"
       >
         <a-radio
-          :class="item.layout !== 'inline' && 'radio-group-block'"
+          :class="item.layout !== 'inline' && 'select-block'"
           v-for="(option, key) in item.options"
           :key="key"
           :value="option.value"
           >{{ item.showLabel ? option.label : option.value }}</a-radio
         >
       </a-radio-group>
+      <a-checkbox-group
+        v-if="item.type === 'checkbox-group'"
+        v-model="item.defaultValue"
+      >
+        <a-checkbox
+          :class="item.layout !== 'inline' && 'select-block'"
+          v-for="(option, key) in item.options"
+          :key="key"
+          :value="option.value"
+          >{{ item.showLabel ? option.label : option.value }}</a-checkbox
+        >
+      </a-checkbox-group>
+      <a-select
+        v-model="item.defaultValue"
+        v-if="item.type === 'select'"
+        :mode="item.mode"
+        :allowClear="item.allowClear"
+        :placeholder="item.placeholder"
+      >
+        <a-select-option
+          v-for="(option, key) in item.options"
+          :key="key"
+          :value="option.value"
+          >{{ item.showLabel ? option.label : option.value }}</a-select-option
+        >
+      </a-select>
       <a-rate v-if="item.type === 'rate'" />
       <a-switch v-if="item.type === 'switch'" />
       <a-slider v-if="item.type === 'slider'" />
@@ -74,7 +100,9 @@ import {
   DatePicker,
   TimePicker,
   Icon,
-  Radio
+  Radio,
+  Checkbox,
+  Select
 } from "ant-design-vue";
 export default {
   components: {
@@ -90,7 +118,11 @@ export default {
     [Icon.name]: Icon,
     [Input.Password.name]: Input.Password,
     [Radio.Group.name]: Radio.Group,
-    [Radio.name]: Radio
+    [Radio.name]: Radio,
+    [Checkbox.name]: Checkbox,
+    [Checkbox.Group.name]: Checkbox.Group,
+    [Select.name]: Select,
+    [Select.Option.name]: Select.Option
   },
   props: {
     item: {
@@ -160,8 +192,10 @@ export default {
 .active {
   border-color: #1890ff;
 }
-.radio-group-block {
+.select-block {
   display: block;
   line-height: 30px;
+  margin-right: 8px;
+  margin-left: 0;
 }
 </style>
