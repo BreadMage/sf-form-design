@@ -15,6 +15,11 @@
       >密码模式</a-checkbox
     >
     <a-checkbox
+      v-model="activeField.inputReadOnly"
+      v-if="control.includes('inputReadOnly')"
+      >完全只读</a-checkbox
+    >
+    <a-checkbox
       v-model="activeField.allowClear"
       v-if="control.includes('allowClear')"
       >显示清除按钮</a-checkbox

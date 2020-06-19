@@ -63,11 +63,13 @@
   },
   {
     "label": "时间选择器",
-    "type": "time-picker"
+    "type": "time-picker",
+    "format": "HH:mm:ss"
   },
   {
     "label": "日期选择器",
-    "type": "date-picker"
+    "type": "date-picker",
+    "format": "YYYY-MM-DD"
   },
   {
     "label": "评分",

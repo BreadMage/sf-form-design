@@ -28,6 +28,13 @@
         v-if="activeField.type === 'select'"
         :activeField="activeField"
       />
+      <time-date-picker-design
+        v-if="
+          activeField.type === 'time-picker' ||
+            activeField.type === 'date-picker'
+        "
+        :activeField="activeField"
+      />
     </section>
   </div>
 </template>
@@ -37,7 +44,8 @@ import {
   InputDesign,
   InputNumberDesign,
   RadioCheckboxGroupDesign,
-  SelectDesign
+  SelectDesign,
+  TimeDatePikcerDesign
 } from "@/components/field-design";
 export default {
   components: {
@@ -47,7 +55,8 @@ export default {
     "input-design": InputDesign,
     "input-number-design": InputNumberDesign,
     "radio-checkbox-group-design": RadioCheckboxGroupDesign,
-    "select-design": SelectDesign
+    "select-design": SelectDesign,
+    "time-date-picker-design": TimeDatePikcerDesign
   },
   props: {
     activeField: {

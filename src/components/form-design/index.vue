@@ -68,8 +68,28 @@
       <a-rate v-if="item.type === 'rate'" />
       <a-switch v-if="item.type === 'switch'" />
       <a-slider v-if="item.type === 'slider'" />
-      <a-date-picker v-if="item.type === 'date-picker'" />
-      <a-time-picker v-if="item.type === 'time-picker'" />
+      <a-date-picker
+        :allowClear="item.allowClear"
+        :placeholder="item.placeholder"
+        :valueFormat="item.format"
+        :format="item.format"
+        v-if="item.type === 'date-picker' && !item.isRange"
+      />
+      <a-time-picker
+        :allowClear="item.allowClear"
+        :placeholder="item.placeholder"
+        :valueFormat="item.format"
+        :format="item.format"
+        v-if="item.type === 'time-picker'"
+      />
+      <a-range-picker
+        :format="item.format"
+        :showTime="true"
+        :allowClear="item.allowClear"
+        :placeholder="item.placeholder"
+        :valueFormat="item.format"
+        v-if="item.type === 'date-picker' && item.isRange"
+      />
     </a-form-model-item>
     <a-icon
       v-show="activeField.id === item.id"
@@ -115,6 +135,7 @@ export default {
     [Slider.name]: Slider,
     [DatePicker.name]: DatePicker,
     [TimePicker.name]: TimePicker,
+    [DatePicker.RangePicker.name]: DatePicker.RangePicker,
     [Icon.name]: Icon,
     [Input.Password.name]: Input.Password,
     [Radio.Group.name]: Radio.Group,
