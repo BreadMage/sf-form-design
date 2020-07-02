@@ -73,7 +73,8 @@
   },
   {
     "label": "评分",
-    "type": "rate"
+    "type": "rate",
+    "count": 5
   },
   {
     "label": "开关",

@@ -35,6 +35,10 @@
         "
         :activeField="activeField"
       />
+      <rate-design
+        v-if="activeField.type === 'rate'"
+        :activeField="activeField"
+      />
     </section>
   </div>
 </template>
@@ -45,7 +49,8 @@ import {
   InputNumberDesign,
   RadioCheckboxGroupDesign,
   SelectDesign,
-  TimeDatePikcerDesign
+  TimeDatePikcerDesign,
+  RateDesign
 } from "@/components/field-design";
 export default {
   components: {
@@ -56,7 +61,8 @@ export default {
     "input-number-design": InputNumberDesign,
     "radio-checkbox-group-design": RadioCheckboxGroupDesign,
     "select-design": SelectDesign,
-    "time-date-picker-design": TimeDatePikcerDesign
+    "time-date-picker-design": TimeDatePikcerDesign,
+    "rate-design": RateDesign
   },
   props: {
     activeField: {

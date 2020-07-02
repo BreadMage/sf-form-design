@@ -24,6 +24,11 @@
       v-if="control.includes('allowClear')"
       >显示清除按钮</a-checkbox
     >
+    <a-checkbox
+      v-model="activeField.showText"
+      v-if="control.includes('showText')"
+      >显示分数</a-checkbox
+    >
   </div>
 </template>
 <script>

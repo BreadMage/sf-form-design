@@ -8,7 +8,7 @@
     class="form-design"
   >
     <a-form-model-item
-      :label="item.label"
+      :label="item.hiddenLabel ? 0 : item.label"
       class="form-design-inner"
       :class="item.customClass"
       :required="item.required"
@@ -65,7 +65,15 @@
           >{{ item.showLabel ? option.label : option.value }}</a-select-option
         >
       </a-select>
-      <a-rate v-if="item.type === 'rate'" />
+      <a-rate
+        v-if="item.type === 'rate'"
+        v-model="item.defaultValue"
+        :count="item.count"
+        :allowHalf="item.allowHalf"
+      />
+      <span class="rate-text" v-if="item.type === 'rate' && item.showText">{{
+        item.defaultValue || 0
+      }}</span>
       <a-switch v-if="item.type === 'switch'" />
       <a-slider v-if="item.type === 'slider'" />
       <a-date-picker
@@ -180,6 +188,11 @@ export default {
   border: 3px solid #fff;
   .form-design-inner {
     padding: 3px;
+    .rate-text {
+      display: inline-block;
+      margin-left: 8px;
+      font-size: 14px;
+    }
   }
   .item-icon {
     background-color: #1890ff;
@@ -188,7 +201,7 @@ export default {
     padding: 4px;
     position: absolute;
     cursor: pointer;
-    z-index: 10;
+    z-index: 20;
   }
   .drag-icon {
     cursor: move;
