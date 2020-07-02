@@ -47,6 +47,10 @@
         v-if="activeField.type === 'text'"
         :activeField="activeField"
       />
+      <slider-design
+        v-if="activeField.type === 'slider'"
+        :activeField="activeField"
+      />
     </section>
   </div>
 </template>
@@ -60,7 +64,8 @@ import {
   TimeDatePikcerDesign,
   RateDesign,
   SwitchDesign,
-  TextDesign
+  TextDesign,
+  SliderDesign
 } from "@/components/field-design";
 export default {
   components: {
@@ -74,7 +79,8 @@ export default {
     [TimeDatePikcerDesign.name]: TimeDatePikcerDesign,
     [RateDesign.name]: RateDesign,
     [SwitchDesign.name]: SwitchDesign,
-    [TextDesign.name]: TextDesign
+    [TextDesign.name]: TextDesign,
+    [SliderDesign.name]: SliderDesign
   },
   props: {
     activeField: {

@@ -75,7 +75,20 @@
         item.defaultValue || 0
       }}</span>
       <a-switch v-if="item.type === 'switch'" v-model="item.defaultValue" />
-      <a-slider v-if="item.type === 'slider'" />
+      <a-slider
+        v-if="item.type === 'slider'"
+        :min="item.min"
+        :max="item.max"
+        :step="item.step"
+        v-model="item.defaultValue"
+      />
+      <a-input-number
+        v-if="item.type === 'slider' && item.showInput"
+        :min="item.min"
+        :max="item.max"
+        :step="item.step"
+        v-model="item.defaultValue"
+      />
       <a-date-picker
         :allowClear="item.allowClear"
         :placeholder="item.placeholder"

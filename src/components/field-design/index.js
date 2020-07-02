@@ -6,6 +6,7 @@ import TimeDatePikcerDesign from "./time-date-picker-design.vue";
 import RateDesign from "./rate-design";
 import SwitchDesign from "./switch-design";
 import TextDesign from "./text-design";
+import SliderDesign from "./slider-design";
 
 export {
   InputDesign,
@@ -15,5 +16,6 @@ export {
   TimeDatePikcerDesign,
   RateDesign,
   SwitchDesign,
-  TextDesign
+  TextDesign,
+  SliderDesign
 };
