@@ -28,6 +28,7 @@ import OptionsConfig from "./options-config";
 import ActionAttributeConfig from "./action-attribute-config";
 import FromRulesConfig from "./form-rules-config";
 export default {
+  name: "select-design",
   components: {
     [Input.name]: Input,
     [InputNumber.name]: InputNumber,

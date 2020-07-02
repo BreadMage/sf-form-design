@@ -86,7 +86,8 @@
   },
   {
     "label": "文字",
-    "type": "text"
+    "type": "text",
+    "defaultValue": "This is a text"
   },
   {
     "label": "HTML",

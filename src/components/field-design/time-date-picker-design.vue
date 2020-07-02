@@ -37,6 +37,7 @@ import { Input, Divider, InputNumber, Radio, Switch } from "ant-design-vue";
 import ActionAttributeConfig from "./action-attribute-config";
 import FromRulesConfig from "./form-rules-config";
 export default {
+  name: "time-date-picker-design",
   components: {
     [Input.name]: Input,
     [InputNumber.name]: InputNumber,

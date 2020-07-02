@@ -34,6 +34,7 @@
 <script>
 import { Checkbox } from "ant-design-vue";
 export default {
+  name: "action-attribute-config",
   components: {
     [Checkbox.name]: Checkbox
   },

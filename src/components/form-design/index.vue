@@ -74,7 +74,7 @@
       <span class="rate-text" v-if="item.type === 'rate' && item.showText">{{
         item.defaultValue || 0
       }}</span>
-      <a-switch v-if="item.type === 'switch'" />
+      <a-switch v-if="item.type === 'switch'" v-model="item.defaultValue" />
       <a-slider v-if="item.type === 'slider'" />
       <a-date-picker
         :allowClear="item.allowClear"
@@ -98,6 +98,7 @@
         :valueFormat="item.format"
         v-if="item.type === 'date-picker' && item.isRange"
       />
+      <div v-if="item.type === 'text'" v-text="item.defaultValue"></div>
     </a-form-model-item>
     <a-icon
       v-show="activeField.id === item.id"

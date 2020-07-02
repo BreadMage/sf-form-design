@@ -26,6 +26,7 @@ import { Input, Divider, Checkbox } from "ant-design-vue";
 import FromRulesConfig from "./form-rules-config";
 import ActionAttributeConfig from "./action-attribute-config";
 export default {
+  name: "input-design",
   components: {
     [Input.name]: Input,
     [Divider.name]: Divider,

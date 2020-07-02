@@ -53,6 +53,7 @@
 <script>
 import { Input, Checkbox, Row, Col, Select } from "ant-design-vue";
 export default {
+  name: "form-rules-config",
   components: {
     [Input.name]: Input,
     [Checkbox.name]: Checkbox,

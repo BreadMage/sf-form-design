@@ -28,6 +28,7 @@ import { Input, Divider, InputNumber } from "ant-design-vue";
 import ActionAttributeConfig from "./action-attribute-config";
 import FromRulesConfig from "./form-rules-config";
 export default {
+  name: "input-number-design",
   components: {
     [Input.name]: Input,
     [InputNumber.name]: InputNumber,

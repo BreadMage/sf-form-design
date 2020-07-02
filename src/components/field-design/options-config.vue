@@ -101,6 +101,7 @@ import {
   Checkbox
 } from "ant-design-vue";
 export default {
+  name: "options-config",
   components: {
     [Input.name]: Input,
     [InputNumber.name]: InputNumber,
