@@ -25,7 +25,7 @@ import OptionsConfig from "./options-config";
 import ActionAttributeConfig from "./action-attribute-config";
 import FromRulesConfig from "./form-rules-config";
 export default {
-  name: "radio-checkbox-gruop-design",
+  name: "radio-checkbox-group-design",
   components: {
     [Input.name]: Input,
     [InputNumber.name]: InputNumber,

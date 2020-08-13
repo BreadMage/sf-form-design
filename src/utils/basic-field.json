@@ -95,6 +95,8 @@
   },
   {
     "label": "HTML",
-    "type": "html"
+    "type": "html",
+    "defaultValue": "<strong>Test HTML</strong>",
+    "acctionAttributeControl": ["hidden"]
   }
 ]

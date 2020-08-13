@@ -7,6 +7,7 @@ import RateDesign from "./rate-design";
 import SwitchDesign from "./switch-design";
 import TextDesign from "./text-design";
 import SliderDesign from "./slider-design";
+import HtmlDesign from "./html-design";
 
 export {
   InputDesign,
@@ -17,5 +18,6 @@ export {
   RateDesign,
   SwitchDesign,
   TextDesign,
-  SliderDesign
+  SliderDesign,
+  HtmlDesign
 };

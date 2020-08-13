@@ -112,6 +112,7 @@
         v-if="item.type === 'date-picker' && item.isRange"
       />
       <div v-if="item.type === 'text'" v-text="item.defaultValue"></div>
+      <div v-if="item.type === 'html'" v-html="item.defaultValue"></div>
     </a-form-model-item>
     <a-icon
       v-show="activeField.id === item.id"

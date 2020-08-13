@@ -39,6 +39,7 @@ import {
 import ActionAttributeConfig from "./action-attribute-config";
 import FromRulesConfig from "./form-rules-config";
 export default {
+  name: "rate-design",
   components: {
     [Input.name]: Input,
     [InputNumber.name]: InputNumber,

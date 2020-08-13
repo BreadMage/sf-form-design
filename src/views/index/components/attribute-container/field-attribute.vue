@@ -51,6 +51,10 @@
         v-if="activeField.type === 'slider'"
         :activeField="activeField"
       />
+      <html-design
+        v-if="activeField.type === 'html'"
+        :activeField="activeField"
+      />
     </section>
   </div>
 </template>
@@ -65,7 +69,8 @@ import {
   RateDesign,
   SwitchDesign,
   TextDesign,
-  SliderDesign
+  SliderDesign,
+  HtmlDesign
 } from "@/components/field-design";
 export default {
   components: {
@@ -80,7 +85,8 @@ export default {
     [RateDesign.name]: RateDesign,
     [SwitchDesign.name]: SwitchDesign,
     [TextDesign.name]: TextDesign,
-    [SliderDesign.name]: SliderDesign
+    [SliderDesign.name]: SliderDesign,
+    [HtmlDesign.name]: HtmlDesign
   },
   props: {
     activeField: {
