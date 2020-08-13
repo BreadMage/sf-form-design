@@ -4,11 +4,13 @@
       <field-container />
     </aside>
     <section class="form-container container">
-      <form-container
-        :form-list.sync="formJson.list"
-        :form-config="formJson.config"
-        :active-field.sync="activeField"
-      />
+      <form-container :form-config="formJson.config">
+        <drag-container
+          :form-config="formJson.config"
+          :form-list.sync="formJson.list"
+          :active-field.sync="activeField"
+        />
+      </form-container>
     </section>
     <aside class="attribute-container container">
       <attribute-container
@@ -22,11 +24,13 @@
 import FieldContainer from "./components/field-container";
 import FormContainer from "./components/form-container";
 import AttributeContainer from "./components/attribute-container";
+import DragContainer from "./components/drag-container";
 export default {
   components: {
     "field-container": FieldContainer,
     "form-container": FormContainer,
-    "attribute-container": AttributeContainer
+    "attribute-container": AttributeContainer,
+    [DragContainer.name]: DragContainer
   },
   data() {
     return {
