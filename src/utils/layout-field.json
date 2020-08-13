@@ -6,6 +6,10 @@
     "label": "标签页"
   },
   {
-    "label": "分割线"
+    "label": "分割线",
+    "type": "divider",
+    "hiddenLabel": true,
+    "contentPosition": "left",
+    "acctionAttributeControl": ["hidden"]
   }
 ]

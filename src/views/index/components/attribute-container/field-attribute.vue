@@ -55,6 +55,10 @@
         v-if="activeField.type === 'html'"
         :activeField="activeField"
       />
+      <divider-design
+        v-if="activeField.type === 'divider'"
+        :activeField="activeField"
+      />
     </section>
   </div>
 </template>
@@ -70,7 +74,8 @@ import {
   SwitchDesign,
   TextDesign,
   SliderDesign,
-  HtmlDesign
+  HtmlDesign,
+  DividerDesign
 } from "@/components/field-design";
 export default {
   components: {
@@ -86,7 +91,8 @@ export default {
     [SwitchDesign.name]: SwitchDesign,
     [TextDesign.name]: TextDesign,
     [SliderDesign.name]: SliderDesign,
-    [HtmlDesign.name]: HtmlDesign
+    [HtmlDesign.name]: HtmlDesign,
+    [DividerDesign.name]: DividerDesign
   },
   props: {
     activeField: {

@@ -25,7 +25,11 @@
             :key="key"
             @click="activeFieldChange(item)"
           >
-            <form-design :item="item" :active-field="activeField" />
+            <form-design
+              :field-info="item"
+              :active-field="activeField"
+              :form-config="formConfig"
+            />
           </div>
         </draggable>
       </a-form-model>

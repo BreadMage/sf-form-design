@@ -1,3 +1,4 @@
+// basic
 import InputDesign from "./input-design.vue";
 import InputNumberDesign from "./input-number-design.vue";
 import RadioCheckboxGroupDesign from "./radio-checkbox-group-design.vue";
@@ -9,7 +10,11 @@ import TextDesign from "./text-design";
 import SliderDesign from "./slider-design";
 import HtmlDesign from "./html-design";
 
+// layout
+import DividerDesign from "./divider-design";
+
 export {
+  // basic
   InputDesign,
   InputNumberDesign,
   RadioCheckboxGroupDesign,
@@ -19,5 +24,7 @@ export {
   SwitchDesign,
   TextDesign,
   SliderDesign,
-  HtmlDesign
+  HtmlDesign,
+  // layout
+  DividerDesign
 };
