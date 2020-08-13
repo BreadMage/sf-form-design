@@ -18,11 +18,13 @@
       v-show="activeField.id === fieldInfo.id"
       class="copy-icon item-icon"
       type="copy"
+      @click="$emit('copyField', fieldIndex)"
     />
     <a-icon
       v-show="activeField.id === fieldInfo.id"
       class="delete-icon item-icon"
       type="delete"
+      @click="$emit('deleteField', fieldIndex)"
     />
     <div class="field-id">{{ fieldInfo.model }}</div>
   </div>
@@ -50,6 +52,10 @@ export default {
     formConfig: {
       type: Object,
       default: () => ({})
+    },
+    fieldIndex: {
+      type: Number,
+      default: null
     }
   }
 };

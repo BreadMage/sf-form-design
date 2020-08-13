@@ -29,6 +29,9 @@
               :field-info="item"
               :active-field="activeField"
               :form-config="formConfig"
+              :field-index="key"
+              @deleteField="deleteField"
+              @copyField="copyField"
             />
           </div>
         </draggable>
@@ -38,6 +41,7 @@
 </template>
 <script>
 import { FormModel } from "ant-design-vue";
+import { uniqueId } from "lodash";
 import draggable from "vuedraggable";
 import FormDesign from "@/components/form-design";
 export default {
@@ -81,6 +85,18 @@ export default {
       if (event.added) {
         this.activeFieldChange(event.added.element);
       }
+    },
+    deleteField(index) {
+      this.formListInner.splice(index, 1);
+    },
+    copyField(index) {
+      const targetField = this.formListInner[index];
+      const copyId = uniqueId(`${targetField.type}-`);
+      this.formListInner.splice(index + 1, 0, {
+        ...targetField,
+        id: copyId,
+        model: copyId
+      });
     }
   }
 };
